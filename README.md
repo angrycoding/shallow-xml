@@ -13,4 +13,21 @@ Instead of doing it in classical way, shallow-xml uses a technique called
 [shallow parsing](http://en.wikipedia.org/wiki/Shallow_parsing). Using regular expressions
 it converts original xml - document into a list of tokens, trying to extract as much
 useful information as possible, based on known structure defined by the developer.
-So instead of fixing invalid markup 
+Take a look on following XML document (OpenSocial gadget definition):
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Module>
+  <ModulePrefs title="Proxied Content Example" />
+  <Content view="home">
+    <ul>
+      <li>111
+      <li>222
+      <li>333
+    </ul>
+  </Content>
+</Module>
+```
+
+As you can see this xml document cannot be parsed using classical xml parser,
+because HTML code that is placed inside `<Content></Content>` tag is invalid.
