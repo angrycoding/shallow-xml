@@ -26,7 +26,7 @@ Take a look on following XML document (OpenSocial gadget definition):
       <li>333
     </ul>
   </Content>
-  <Content view="home..not">
+  <Content view="home...not">
     <div>
       <span>
         <strong>
