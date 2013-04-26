@@ -26,6 +26,12 @@ Take a look on following XML document (OpenSocial gadget definition):
       <li>333
     </ul>
   </Content>
+  <Content view="home..not">
+    <div>
+      <span>
+        <strong>
+          hello
+  </Content>
 </Module>
 ```
 
@@ -49,8 +55,14 @@ console.info(gadgetDoc);
 ## Parser API ##
 
 ```javascript
-// find <Module></Module> element
+// find Module element
 var moduleEl = gadgetDoc('Module');
-// find <Content></Content> element inside <Module></Module> element
-var contentEl = moduleEl('Content');
+// find ModulePrefs element inside Module element
+var modulePrefsEl = moduleEl('ModulePrefs');
+// extract @title attribute of ModulePrefs element
+console.info(modulePrefsEl('@title'));
+// find Content elements inside Module element
+var contentEls = moduleEl('Content');
+// extract @view attribute of second Content element
+console.info(contentEls(0)('@view'));
 ```
