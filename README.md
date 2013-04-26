@@ -40,17 +40,17 @@ var GadgetParser = new Parser([
   // parse only listed tags
   'Module', 'ModulePrefs', 'Content'
 ]);
-```
-
-Now we can parse our xml document:
-
-```javascript
 // parse xml document
 var gadgetDoc = GadgetParser.parse(xml);
+// output xml document
+console.info(gadgetDoc);
+```
+
+## Parser API ##
+
+```javascript
 // find <Module></Module> element
 var moduleEl = gadgetDoc('Module');
 // find <Content></Content> element inside <Module></Module> element
 var contentEl = moduleEl('Content');
-// output <Content></Content> element XML fragment
-console.info(contentEl);
 ```
