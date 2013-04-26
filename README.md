@@ -31,3 +31,13 @@ Take a look on following XML document (OpenSocial gadget definition):
 
 As you can see this xml document cannot be parsed using classical xml parser,
 because HTML code that is placed inside `<Content></Content>` tag is invalid.
+However this document is not a problem for shallow parser, just define known structure.
+By setting up the structure you're saying that only listed tags has to be processed during the parsing.
+
+```javascript
+// create parser instance
+var GadgetParser = new Parser([
+  // parse only listed tags
+  'Module', 'ModulePrefs', 'Content'
+]);
+```
